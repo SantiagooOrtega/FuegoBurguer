@@ -7,12 +7,6 @@ type Props = {
   onChange: (id: string) => void;
 };
 
-const icons: Record<string, string> = {
-  combos: "🍔",
-  hamburguesas: "🥩",
-  acompanantes: "🍟",
-};
-
 export default function CategoryNav({ active, onChange }: Props) {
   return (
     <nav
@@ -35,7 +29,6 @@ export default function CategoryNav({ active, onChange }: Props) {
                       : "border-transparent text-fuego-text-muted hover:text-white"
                   }`}
                 >
-                  <span aria-hidden="true">{icons[cat.id]}</span>
                   {cat.label}
                 </button>
               </li>
