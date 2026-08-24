@@ -5,19 +5,33 @@ import { LOGO_URL } from "../lib/menu-data";
 
 export default function Header() {
   return (
-    <header className="relative w-full bg-fuego-black overflow-hidden">
-      {/* Fondo con gradiente de llamas */}
+    <header className="relative w-full overflow-hidden bg-fuego-black">
+      {/* Textura de fondo: patrón de rombos tipo mosaico de barrio */}
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
-          background:
-            "radial-gradient(ellipse at 50% 120%, #CC0000 0%, #660000 40%, transparent 70%)",
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-rule='evenodd'%3E%3Cpath d='M0 20 L20 0 L40 20 L20 40Z'/%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: "40px 40px",
         }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-10 flex flex-col items-center text-center gap-4">
+      {/* Gradiente rojo desde abajo — como brasa */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(140,0,0,0.35) 0%, rgba(80,0,0,0.15) 40%, transparent 75%)",
+        }}
+      />
+
+      {/* Línea decorativa superior — detalle de marca */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-fuego-red" />
+
+      {/* Contenido */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 pt-10 pb-12 flex flex-col items-center text-center gap-5">
+
         {/* Logo */}
-        <div className="w-24 h-24 relative">
+        <div className="w-20 h-20 relative drop-shadow-[0_4px_24px_rgba(204,0,0,0.5)]">
           <Image
             src={LOGO_URL}
             alt="Fuego Burger logo"
@@ -28,14 +42,18 @@ export default function Header() {
         </div>
 
         {/* Nombre */}
-        <div>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-none">
-            FUEGO{" "}
-            <span className="text-fuego-red">BURGER</span>
+        <div className="flex flex-col gap-1">
+          <h1 className="text-5xl md:text-6xl font-black tracking-tight text-white leading-none">
+            FUEGO <span className="text-fuego-red">BURGER</span>
           </h1>
-          <p className="mt-2 text-fuego-text-muted text-sm tracking-widest uppercase">
-            Hamburguesas artesanales · Colombia
-          </p>
+          {/* Línea separadora tipo sello */}
+          <div className="flex items-center justify-center gap-3 mt-2">
+            <span className="h-px w-10 bg-fuego-gray-light" />
+            <p className="text-fuego-text-muted text-xs tracking-[0.25em] uppercase font-medium">
+              Hamburguesas artesanales · Colombia
+            </p>
+            <span className="h-px w-10 bg-fuego-gray-light" />
+          </div>
         </div>
 
         {/* Estado */}
@@ -47,13 +65,10 @@ export default function Header() {
           </span>
         </div>
 
-        {/* Descuento banner */}
-        <div className="inline-flex items-center gap-2 bg-fuego-red rounded-lg px-5 py-2">
-          <span className="text-white font-bold text-sm">
-            🔥 10% de descuento en toda la carta hoy
-          </span>
-        </div>
       </div>
+
+      {/* Línea decorativa inferior */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-fuego-gray-mid" />
     </header>
   );
 }
