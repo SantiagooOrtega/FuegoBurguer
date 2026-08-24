@@ -9,7 +9,7 @@ const BG_URL =
 
 export default function Header() {
   return (
-    <header className="relative w-full overflow-hidden" style={{ minHeight: 340 }}>
+    <header className="relative w-full overflow-hidden" style={{ minHeight: 420 }}>
 
       {/* ── Foto de fondo ── */}
       <Image
@@ -18,7 +18,7 @@ export default function Header() {
         aria-hidden="true"
         fill
         priority
-        className="object-cover object-center"
+        className="object-cover object-[center_30%]"
         sizes="100vw"
       />
 
