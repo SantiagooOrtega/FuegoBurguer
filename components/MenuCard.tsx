@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { MenuItem, formatCOP } from "../lib/menu-data";
+import { MenuItem } from "../lib/menu-data";
+import { useCart } from "../context/CartContext";
+import { formatCOP } from "../lib/menu-data";
 
 type Props = {
   item: MenuItem;
@@ -16,12 +17,7 @@ const tagLabels: Record<string, { label: string; color: string }> = {
 };
 
 export default function MenuCard({ item }: Props) {
-  const [added, setAdded] = useState(false);
-
-  function handleAdd() {
-    setAdded(true);
-    setTimeout(() => setAdded(false), 1500);
-  }
+  const { add } = useCart();
 
   return (
     <article
@@ -86,25 +82,12 @@ export default function MenuCard({ item }: Props) {
           </div>
 
           <button
-            onClick={handleAdd}
+            onClick={() => add(item)}
             aria-label={`Agregar ${item.name} al pedido`}
-            className={`flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-bold transition-all duration-200 ${
-              added
-                ? "bg-green-600 text-white scale-95"
-                : "bg-fuego-red hover:bg-fuego-red-dark text-white active:scale-95"
-            }`}
+            className="flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-bold transition-all duration-200 bg-fuego-red hover:bg-fuego-red-dark text-white active:scale-95"
           >
-            {added ? (
-              <>
-                <span aria-hidden="true">✓</span>
-                Agregado
-              </>
-            ) : (
-              <>
-                <span aria-hidden="true">+</span>
-                Agregar
-              </>
-            )}
+            <span aria-hidden="true">+</span>
+            Agregar
           </button>
         </div>
       </div>

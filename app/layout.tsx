@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CartProvider } from "../context/CartContext";
+import CartDrawer from "../components/CartDrawer";
+import CartButton from "../components/CartButton";
 
 export const metadata: Metadata = {
   title: "Fuego Burger — Domicilios",
@@ -19,7 +22,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <CartProvider>
+          {children}
+          <CartDrawer />
+          <CartButton />
+        </CartProvider>
+      </body>
     </html>
   );
 }
