@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { LOGO_URL } from "../lib/menu-data";
 
-// Foto de calle bogotana nocturna — Unsplash (licencia libre)
+// Foto de Westcol — fundador de Fuego Burger (vía Agencia PI)
 const BG_URL =
-  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80&auto=format&fit=crop";
+  "https://www.agenciapi.co/sites/default/files/styles/imagen_principal_contenidos_2021/public/2025-10/Solo%20me%20queda%20agradecerles%20por%20confiar%20en%20m%C3%AD%20Trato%20siempre%20de%20darles%20lo%20mejor%20Espero%20que%20se%20haya%283%29%281%29.jpg.webp?h=2a8b1677&itok=7J3rixcM";
 
 export default function Header() {
   return (
