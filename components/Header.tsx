@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { LOGO_URL } from "../lib/menu-data";
 
 // Foto de Westcol — fundador de Fuego Burger (vía Agencia PI)
 const BG_URL =
@@ -69,17 +68,6 @@ export default function Header() {
             Abre hoy a las{" "}
             <strong className="text-white">11:30 am</strong>
           </span>
-        </div>
-
-        {/* Logo debajo del horario */}
-        <div className="w-20 h-20 relative drop-shadow-[0_0_28px_rgba(204,0,0,0.7)]">
-          <Image
-            src={LOGO_URL}
-            alt="Fuego Burger logo"
-            fill
-            className="object-contain"
-            priority
-          />
         </div>
 
       </div>
