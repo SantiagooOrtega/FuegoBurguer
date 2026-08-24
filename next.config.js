@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "s3yuumiproduction.s3.us-east-2.amazonaws.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
   },
 };
