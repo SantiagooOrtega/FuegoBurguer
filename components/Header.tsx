@@ -38,8 +38,8 @@ export default function Header() {
           </p>
         </div>
 
-        {/* Badge de estado */}
-        <div className="flex items-center gap-2 bg-fuego-gray-dark border border-fuego-gray-light rounded-full px-4 py-1.5 text-sm">
+        {/* Estado */}
+        <div className="flex items-center gap-2 text-sm">
           <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
           <span className="text-fuego-text-light">
             Abre hoy a las{" "}
