@@ -18,7 +18,7 @@ export default function Header() {
         aria-hidden="true"
         fill
         priority
-        className="object-cover object-[center_30%]"
+        className="object-cover object-[60%_30%]"
         sizes="100vw"
       />
 
@@ -47,21 +47,19 @@ export default function Header() {
       {/* ── Línea roja superior — sello de marca ── */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-fuego-red z-10" />
 
-      {/* ── Contenido ── */}
+      {/* ── Logo esquina superior izquierda ── */}
+      <div className="absolute top-5 left-5 z-20 w-14 h-14 drop-shadow-[0_0_20px_rgba(204,0,0,0.7)]">
+        <Image
+          src={LOGO_URL}
+          alt="Fuego Burger logo"
+          fill
+          className="object-contain"
+          priority
+        />
+      </div>
+
+      {/* ── Contenido centrado: solo texto ── */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 pt-12 pb-14 flex flex-col items-center text-center gap-5">
-
-        {/* Logo con halo rojo */}
-        <div className="w-20 h-20 relative drop-shadow-[0_0_28px_rgba(204,0,0,0.6)]">
-          <Image
-            src={LOGO_URL}
-            alt="Fuego Burger logo"
-            fill
-            className="object-contain"
-            priority
-          />
-        </div>
-
-        {/* Nombre */}
         <div className="flex flex-col gap-1">
           <h1 className="text-5xl md:text-6xl font-black tracking-tight text-white leading-none">
             FUEGO <span className="text-fuego-red">BURGER</span>
